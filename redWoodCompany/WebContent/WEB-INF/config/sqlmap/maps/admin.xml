@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="admin">
+	
+	<update id="insert_img" parameterType="map">
+		UPDATE
+			mainPortpolio
+		SET
+			img_Name = #{img_Name}
+			, img_Path = #{img_Path}
+		WHERE
+			main_portpoloi_img_no = #{main_portpoloi_img_no}
+	</update>
+	
+	<insert id="save_img_cg" parameterType="map">
+		INSERT INTO
+			cgPortpolio
+			(
+				img_Name
+				, img_Path
+			)
+		VALUES
+			(
+				#{img_Name}
+				, #{img_Path}
+			)
+	</insert>
+	
+	<delete id="delete_img_cg" parameterType="map">
+		DELETE FROM
+			cgPortpolio
+		WHERE
+			cgPortpolio_no = #{cgPortpolio_no}
+	</delete>
+	
+	
+</mapper>
