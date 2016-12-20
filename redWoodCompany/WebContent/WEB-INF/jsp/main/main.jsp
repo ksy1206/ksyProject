@@ -129,13 +129,18 @@
                 <h2 class="page-header">건축 시뮬레이션</h2>
             </div>
             <div class="col-md-6">
-                <video poster="http://placehold.it/640x360" controls="controls" autoplay="autoplay" style="max-width: 100%;">
-				    <source src="<%=cp%>/video/main01.mp4" type="video/mp4" />
-				</video>
+                <ul>
+                	<li><strong>2D 설계도면을 3D동영상으로 제작해드립니다.</strong></li>
+                    <li><strong>도면없이  컨셉제시용 제작도 가능</strong></li>
+                    <li><strong>다세대빌라 , 아파트,  자연휴양림, 호텔, 리조트 제작가능</strong></li>
+                    <br>
+                    <br>
+                </ul>
+                <p>건축3D 시뮬레이션은 설계의 문제유무판단과 사업성 검토 , 적합한 외장재선택에  도움이되고  건축물의 완성도를 높입니다. 여러분의 상상속의 이미지를 영상으로 제작합니다. <br> 참고이미지 , 도면 , 조감도만으론 이미지 구현에 한계가 있습니다.</p>
             </div>
             <div class="col-md-6">
                 <video poster="http://placehold.it/640x360" controls="controls" autoplay="autoplay" style="max-width: 100%;">
-				    <source src="<%=cp%>/video/main01.mp4" type="video/mp4" />
+				    <source src="<%=cp%>/video/main02.mp4" type="video/mp4" />
 				</video>
             </div>
         </div>
