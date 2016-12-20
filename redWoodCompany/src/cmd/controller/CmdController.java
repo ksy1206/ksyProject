@@ -104,11 +104,18 @@ public class CmdController
 	 */
 	@RequestMapping(value="/portfolio-1-col.do")
 	public ModelAndView portfolio_1_col(	HttpServletRequest 					request,
-											HttpServletResponse 				response) throws Exception {
+											HttpServletResponse 				response,
+											@RequestParam(value="type") String 	type) throws Exception {
 		List<Object> potolio_list = null;
-		potolio_list = cmdService.cgImg_GET();		
+		
+		if(type.equals("cg")){
+			potolio_list = cmdService.cgImg_GET();
+		} else if(type.equals("construction")) {
+			potolio_list = cmdService.constructionImg_GET();
+		}
 		ModelAndView mav = new ModelAndView("portfolio/portfolio-1-col");
 		mav.addObject("potolio_list", potolio_list);
+		mav.addObject("type", type);
 		return mav;
 	}
 	
@@ -120,10 +127,14 @@ public class CmdController
 	 * @throws Exception
 	 */
 	@RequestMapping(value="/portfolio-2-col.do")
-	public String portfolio_2_col(	HttpServletRequest 					request,
-									HttpServletResponse 				response) throws Exception {
-				
-		return "portfolio/portfolio-2-col";
+	public ModelAndView vr(		HttpServletRequest 					request,
+			HttpServletResponse 				response) throws Exception {
+
+		List<Object> potolio_list = null;
+		potolio_list = cmdService.vrMP4_GET();		
+		ModelAndView mav = new ModelAndView("portfolio/portfolio-2-col");
+		mav.addObject("potolio_list", potolio_list);
+		return mav;
 	}
 	
 	/**
@@ -203,6 +214,66 @@ public class CmdController
 		return output;
 	}
 	
+	/**
+	 * 업체파일업로드
+	 * 
+	 * @param req
+	 * @param res
+	 * @return ModelAndView
+	 * @throws BusinessException
+	 */
+	@RequestMapping("/saveCompanyMp4.do")
+	public ModelAndView saveCompanyMp4(HttpServletRequest req, HttpServletResponse res,
+			@RequestParam Map<String, Object> pMap) throws Exception {
+
+		ModelAndView output = new ModelAndView();
+		Map<String, Object> rMap = new HashMap<String, Object>();
+		int result = 0;
+
+		try {
+
+			HttpSession sesson = req.getSession();
+			String doc_root = sesson.getServletContext().getRealPath("/upload");
+
+			String fileDestPath = "";
+			String member_no = pMap.get("member_no").toString();
+			fileDestPath = doc_root + File.separator + "mp4" + File.separator + member_no;
+
+			String fileUploadPath = (String) pMap.get("fileUploadPath");
+			String orgName = (String) pMap.get("fileNewName");
+			String destination = (String) pMap.get("destination");
+
+			System.out.println(" * 임시 파일 경로 : " + destination);
+
+			if (!orgName.equals("") && !fileUploadPath.equals("")) {
+				String temp_file_ext = orgName.substring(orgName.lastIndexOf(".") + 1);
+				String temp_total_path = destination;
+				Calendar calendar = Calendar.getInstance();
+				SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddhhmmss");
+				String today = dateFormat.format(calendar.getTime());
+				String newName = member_no + today + "." + temp_file_ext;
+				// System.gc();
+				FileUtil.moveFile(temp_total_path, fileDestPath, newName);
+
+				System.out.println(" * 새로 저장된 파일 경로 : " + fileDestPath);
+				System.out.println(" * 새로 저장된 파일 이름 : " + newName);
+
+				rMap.put("fileUploadPath", fileDestPath);
+				rMap.put("fileNewName", newName);
+			}
+		
+
+		} catch (Exception e) {
+			throw new Exception(e.toString());
+		}
+
+		rMap.put("resultCode", result);
+
+		output.addAllObjects(rMap);
+		output.setViewName("jsonView");
+
+		return output;
+	}
 	
 	//==================================================================================================================//
 	

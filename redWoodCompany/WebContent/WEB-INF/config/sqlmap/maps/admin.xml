@@ -34,5 +34,38 @@
 			cgPortpolio_no = #{cgPortpolio_no}
 	</delete>
 	
+	<insert id="save_img_construction" parameterType="map">
+		INSERT INTO
+			constPortpolio
+			(
+				img_Name
+				, img_Path
+			)
+		VALUES
+			(
+				#{img_Name}
+				, #{img_Path}
+			)
+	</insert>
 	
+	<delete id="delete_img_construction" parameterType="map">
+		DELETE FROM
+			constPortpolio
+		WHERE
+			constPortpolio_no = #{constPortpolio_no}
+	</delete>
+	
+	<insert id="save_mp4_vr" parameterType="map">
+		INSERT INTO
+			vrMP4
+			(
+				img_Name
+				, img_Path
+			)
+		VALUES
+			(
+				#{img_Name}
+				, #{img_Path}
+			)
+	</insert>
 </mapper>

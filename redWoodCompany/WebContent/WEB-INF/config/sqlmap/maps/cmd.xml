@@ -12,4 +12,13 @@
 		ORDER BY cgPortpolio_no DESC
 	</select>
 	
+	<select id="constructionImg_GET" resultType="map">
+		SELECT * FROM constPortpolio
+		ORDER BY constPortpolio_no DESC
+	</select>
+	
+	<select id="vrMP4_GET" resultType="map">
+		SELECT * FROM vrMP4
+		ORDER BY vrMp4_no DESC
+	</select>
 </mapper>

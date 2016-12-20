@@ -71,6 +71,42 @@ public class AdminController
 	}
 	
 	/**
+	 * construction 페이지 이동
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value="/construction.do")
+	public ModelAndView construction(		HttpServletRequest 					request,
+								HttpServletResponse 				response) throws Exception {
+		
+		List<Object> potolio_list = null;
+		potolio_list = cmdService.constructionImg_GET();		
+		ModelAndView mav = new ModelAndView("admin/admin_construction");
+		mav.addObject("potolio_list", potolio_list);
+		return mav;
+	}
+	
+	/**
+	 * vr 페이지 이동
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value="/vr.do")
+	public ModelAndView vr(		HttpServletRequest 					request,
+								HttpServletResponse 				response) throws Exception {
+		
+		List<Object> potolio_list = null;
+		potolio_list = cmdService.vrMP4_GET();		
+		ModelAndView mav = new ModelAndView("admin/admin_vr");
+		mav.addObject("potolio_list", potolio_list);
+		return mav;
+	}
+	
+	/**
 	 * 메인 페이지 이미지 등록
 	 * @param request
 	 * @param response
@@ -107,7 +143,44 @@ public class AdminController
 	}
     
 	/**
-	 * cg 페이지 이미지 등록
+	 * construction 페이지 이미지 등록 
+	 * @param request
+	 * @param response
+	 * @param map
+	 * @return
+	 * @throws Exception
+	 */
+    @RequestMapping("/save_img_construction.do")
+    public ModelAndView save_img_construction(	HttpServletRequest 					request,
+												HttpServletResponse 				response,
+												@RequestParam Map<String, Object> 	map) throws Exception {
+    	adminService.save_img_construction(map);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("jsonView");
+		return mav;
+	}
+    
+	/**
+	 * construction 페이지 이미지 등록 
+	 * @param request
+	 * @param response
+	 * @param map
+	 * @return
+	 * @throws Exception
+	 */
+    @RequestMapping("/save_img_vr.do")
+    public ModelAndView save_img_vr(	HttpServletRequest 					request,
+												HttpServletResponse 				response,
+												@RequestParam Map<String, Object> 	map) throws Exception {
+    	
+    	adminService.save_mp4_vr(map);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("jsonView");
+		return mav;
+	}
+    
+	/**
+	 * cg 페이지 이미지 삭제
 	 * @param request
 	 * @param response
 	 * @param map
@@ -120,6 +193,23 @@ public class AdminController
 										    	@RequestParam Map<String, Object> 	map) throws Exception {
     	adminService.delete_img_cg(map);
 		ModelAndView mav = new ModelAndView("redirect:/admin/cg.do");
+		return mav;
+	}
+    
+	/**
+	 * construction 페이지 이미지 삭제
+	 * @param request
+	 * @param response
+	 * @param map
+	 * @return
+	 * @throws Exception
+	 */
+    @RequestMapping("/constructionPortpolio_delete.do")
+    public ModelAndView constructionPortpolio_delete(		HttpServletRequest 					request,
+												HttpServletResponse 				response,
+										    	@RequestParam Map<String, Object> 	map) throws Exception {
+    	adminService.delete_img_construction(map);
+		ModelAndView mav = new ModelAndView("redirect:/admin/construction.do");
 		return mav;
 	}
 	

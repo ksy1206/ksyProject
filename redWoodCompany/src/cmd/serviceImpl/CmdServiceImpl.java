@@ -46,8 +46,37 @@ public class CmdServiceImpl implements CmdService {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}	
 		
+		return result;
+	}
+
+	@Override
+	public List<Object> constructionImg_GET() {
+		// TODO Auto-generated method stub
+		List<Object> result = null;
+		
+		try {
+			result = this.commonDao.getListData("cmd.constructionImg_GET");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+		
+		return result;
+	}
+
+	@Override
+	public List<Object> vrMP4_GET() {
+		// TODO Auto-generated method stub
+		List<Object> result = null;
+		
+		try {
+			result = this.commonDao.getListData("cmd.vrMP4_GET");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
 		
 		return result;
 	}

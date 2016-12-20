@@ -24,12 +24,10 @@
 			location.href = "/admin/cg.do";
 		};
 		_this.vr = function() {
-			alert("123");
-			//location.href = "/admin/main.do";
+			location.href = "/admin/vr.do";
 		};
 		_this.Construction = function() {
-			alert("123");
-			//location.href = "/admin/main.do";
+			location.href = "/admin/construction.do";
 		};
 		_this.contact = function() {
 			alert("123");

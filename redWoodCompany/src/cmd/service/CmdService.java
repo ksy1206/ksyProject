@@ -8,6 +8,10 @@ public interface CmdService {
 	public List<Object> mainImg_GET();
 	
 	public List<Object> cgImg_GET();
+	
+	public List<Object> constructionImg_GET();
+	
+	public List<Object> vrMP4_GET();
 }
 
 

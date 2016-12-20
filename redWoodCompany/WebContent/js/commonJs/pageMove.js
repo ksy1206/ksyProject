@@ -19,7 +19,11 @@ function PageMove(){
 	};
 	
 	_this.portfolio_1_col = function() {
-		location.href = "/cmd/portfolio-1-col.do";
+		location.href = "/cmd/portfolio-1-col.do?type=cg";
+	};
+	
+	_this.portfolio_3_col = function() {
+		location.href = "/cmd/portfolio-1-col.do?type=construction";
 	};
 	
 	_this.portfolio_2_col = function() {

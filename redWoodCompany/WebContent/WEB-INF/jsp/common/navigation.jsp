@@ -34,7 +34,7 @@
                                 <a href="#" onclick="pageMove.portfolio_2_col();">VR Simulation</a>
                             </li>
                             <li>
-                                <a href="#" onclick="pageMove.portfolio_1_col();">Construction(시공)</a>
+                                <a href="#" onclick="pageMove.portfolio_3_col();">Construction(시공)</a>
                             </li>
                         </ul>
                     </li>

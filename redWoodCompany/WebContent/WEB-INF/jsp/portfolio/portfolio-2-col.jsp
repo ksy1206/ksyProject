@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%  
 	String cp = request.getContextPath();
 %>
@@ -31,105 +32,52 @@
         </div>
         <!-- /.row -->
 
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-6 img-portfolio">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-hover" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="portfolio-item.html">Project One</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-            <div class="col-md-6 img-portfolio">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-hover" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="portfolio-item.html">Project Two</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-6 img-portfolio">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-hover" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="portfolio-item.html">Project Three</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-            <div class="col-md-6 img-portfolio">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-hover" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="portfolio-item.html">Project Four</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-6 img-portfolio">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-hover" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="portfolio-item.html">Project Five</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-            <div class="col-md-6 img-portfolio">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-hover" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="portfolio-item.html">Project Six</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-        </div>
-        <!-- /.row -->
+	    <!-- Projects Row -->
+	    <div class="row">
+	    	<c:forEach var="data" items="${potolio_list}">
+	        <div class="col-md-6 img-portfolio">
+	        	<video controls="controls" style="max-width: 100%;">
+			    	<source class="img-responsive img-hover" src="/upload/mp4/vr/${data.img_Name}" type="video/mp4" />
+				</video>
+	            <h3>
+	                <a href="portfolio-item.html">Project One</a>
+	            </h3>
+	            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+	        </div>
+	        </c:forEach>
+	    </div>
+	    <!-- /.row -->
 
         <hr>
 
         <!-- Pagination -->
-        <div class="row text-center">
-            <div class="col-lg-12">
-                <ul class="pagination">
-                    <li>
-                        <a href="#">&laquo;</a>
-                    </li>
-                    <li class="active">
-                        <a href="#">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
-                    <li>
-                        <a href="#">&raquo;</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+<!--         <div class="row text-center"> -->
+<!--             <div class="col-lg-12"> -->
+<!--                 <ul class="pagination"> -->
+<!--                     <li> -->
+<!--                         <a href="#">&laquo;</a> -->
+<!--                     </li> -->
+<!--                     <li class="active"> -->
+<!--                         <a href="#">1</a> -->
+<!--                     </li> -->
+<!--                     <li> -->
+<!--                         <a href="#">2</a> -->
+<!--                     </li> -->
+<!--                     <li> -->
+<!--                         <a href="#">3</a> -->
+<!--                     </li> -->
+<!--                     <li> -->
+<!--                         <a href="#">4</a> -->
+<!--                     </li> -->
+<!--                     <li> -->
+<!--                         <a href="#">5</a> -->
+<!--                     </li> -->
+<!--                     <li> -->
+<!--                         <a href="#">&raquo;</a> -->
+<!--                     </li> -->
+<!--                 </ul> -->
+<!--             </div> -->
+<!--         </div> -->
         <!-- /.row -->
 
         <hr>

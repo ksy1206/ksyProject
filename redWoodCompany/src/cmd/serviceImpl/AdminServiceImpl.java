@@ -55,5 +55,38 @@ public class AdminServiceImpl implements AdminService
 		}
 	}
 
+	@Override
+	public void save_img_construction(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		try {
+			this.commonDao.updateData("admin.save_img_construction", map);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+	}
+
+	@Override
+	public void delete_img_construction(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		try {
+			this.commonDao.updateData("admin.delete_img_construction", map);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void save_mp4_vr(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		try {
+			this.commonDao.updateData("admin.save_mp4_vr", map);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 }//end class
 
