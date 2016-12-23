@@ -80,4 +80,16 @@ public class CmdServiceImpl implements CmdService {
 		
 		return result;
 	}
+
+	@Override
+	public void contactInsert(Map<String, Object> map) {
+		// TODO Auto-generated method stub		
+		try {
+			this.commonDao.insertData("cmd.contactInsert", map);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 }

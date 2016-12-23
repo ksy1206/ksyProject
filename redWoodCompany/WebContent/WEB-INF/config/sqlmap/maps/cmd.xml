@@ -21,4 +21,22 @@
 		SELECT * FROM vrMP4
 		ORDER BY vrMp4_no DESC
 	</select>
+	
+	<insert id="contactInsert" parameterType="map">
+		INSERT INTO
+			contact
+			(
+				name
+				, phone
+				, email
+				, message
+			)
+		VALUES
+			(
+				#{name}
+				, #{phone}
+				, #{email}
+				, #{message}
+			)
+	</insert>
 </mapper>

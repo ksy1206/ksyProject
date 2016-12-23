@@ -12,6 +12,8 @@ public interface CmdService {
 	public List<Object> constructionImg_GET();
 	
 	public List<Object> vrMP4_GET();
+	
+	public void contactInsert(Map<String, Object> map);
 }
 
 

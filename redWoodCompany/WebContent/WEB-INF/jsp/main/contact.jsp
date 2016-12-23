@@ -9,6 +9,77 @@
 <jsp:include page="../common/commonHEAD.jsp" flush="false" />
 <jsp:include page="../common/script.jsp" flush="false" />
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD60rwjxUjBDRiDUUfwQvNhjiP8d8hXVD8"></script>
+
+
+<script type="text/javascript">
+function sendMessage(){
+	
+	var name = $("#name").val();
+	var phone = $("#phone").val();
+	var email = $("#email").val();
+	var message = $("#message").val();
+	
+	var isValid = false;
+	
+	isValid = inputIsValid();
+	
+	if(isValid){
+		var params = "name="+name+"&phone="+phone+"&email="+email+"&message="+message;
+		
+		$.ajax({
+	        type        : "POST"  
+	      , async       : false 
+	      , url         : "/cmd/contactSave.do"
+	      , data        : params
+	      , dataType    : "json" 
+	      , timeout     : 30000
+	      , cache       : false     
+	      , contentType : "application/x-www-form-urlencoded;charset=UTF-8"
+	      , error       : function(request, status, error) {
+				alert("작업 도중 오류가 발생하였습니다. 자세한 사항은 고객센터에 문의하십시오.");       
+	      }
+	      , success     : function(data) {
+	    	  alert("견적요청이 완료 되었습니다. 확인 후 작성하신 연락처로 연락 드리겠습니다.");
+	    	  location.reload();
+	      }
+    	});
+	}
+		
+}
+
+function inputIsValid(){
+	
+	var name = $("#name").val();
+	var phone = $("#phone").val();
+	var email = $("#email").val();
+	var message = $("#message").val();
+	
+	var isValid = false;
+	if(name == "" || name == null || name == "undefined") {
+		alert("이름을 입력해 주세요.");
+		$("#name").focus();
+		isValid = false;
+	} else if (phone == "" || phone == null || phone == "undefined") {
+		alert("연락처를 입력해 주세요. 입력하신 번호로 연락 드립니다.");
+		$("#phone").focus();
+		isValid = false;
+	} else if (email == "" || email == null || email == "undefined") {
+		alert("이메일 입력해 주세요.");
+		$("#email").focus();
+		isValid = false;
+	} else if (message == "" || message == null || message == "undefined") {
+		alert("내용을 입력해 주세요.");
+		$("#message").focus();
+		isValid = false;
+	} else {
+		isValid = true;
+	}
+	
+	return isValid;
+}
+
+</script>
+
 <body>
 
 	<jsp:include page="../common/navigation.jsp" flush="false" />
@@ -84,9 +155,11 @@
                             <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
                         </div>
                     </div>
-                    <div id="success"></div>
+                    <div id="success">
+                    	<p>입력하신 정보는 공개 및 기타 상업적인 용도에 사용되지 않으며, 견적 내용 확인후 바로 삭제 됩니다.</p>
+                    </div>
                     <!-- For success/fail messages -->
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="button" class="btn btn-primary" onclick="sendMessage();">Send Message</button>
                 </form>
             </div>
 

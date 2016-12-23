@@ -95,6 +95,18 @@ public class CmdController
 		return "main/contact";
 	}
 	
+	@RequestMapping(value="/contactSave.do")
+	public ModelAndView contactSave(	HttpServletRequest 					request,
+										HttpServletResponse 				response,	
+										@RequestParam Map<String, Object> 	map) throws Exception {
+		
+		cmdService.contactInsert(map);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("jsonView");
+		return mav;
+	}
+	
 	/**
 	 * portfolio-1-col 페이지 이동
 	 * @param request
