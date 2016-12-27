@@ -88,5 +88,48 @@ public class AdminServiceImpl implements AdminService
 		}
 	}
 
+	@Override
+	public Map<String, Object> select_imgName(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		Map<String, Object> portpolio = null;
+		
+		try {
+			portpolio = (Map<String, Object>) this.commonDao.getReadData("admin.select_imgName", map);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return portpolio;
+	}
+
+	@Override
+	public void delete_vrMp4(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		
+		try {
+			this.commonDao.deleteData("admin.delete_vrMp4", map);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	@Override
+	public Map<String, Object> select_vrMp4(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		Map<String, Object> vrMp4 = null;
+		
+		try {
+			vrMp4 = (Map<String, Object>) this.commonDao.getReadData("admin.select_vrMp4", map);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return vrMp4;
+	}
+
 }//end class
 

@@ -1,5 +1,6 @@
 package cmd.controller;
 
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 
@@ -191,8 +192,47 @@ public class AdminController
     public ModelAndView cgPortpolio_delete(		HttpServletRequest 					request,
 												HttpServletResponse 				response,
 										    	@RequestParam Map<String, Object> 	map) throws Exception {
+    	Map<String, Object>		cgPortpolio = null;
+    	
+    	cgPortpolio = adminService.select_imgName(map);
+    	
+    	String deletePath = (String) cgPortpolio.get("img_Path");
+    	String img_Name = (String) cgPortpolio.get("img_Name");
+    	
+    	deletePath = deletePath + "\\" +img_Name;
+    	
+    	System.out.println("**************"+deletePath);
+    	
+    	File file = new File(deletePath);
+    	file.delete();
+    	
     	adminService.delete_img_cg(map);
+    	
 		ModelAndView mav = new ModelAndView("redirect:/admin/cg.do");
+		return mav;
+	}
+    
+    @RequestMapping("/vrMp4_delete.do")
+    public ModelAndView vrMp4_delete(	HttpServletRequest 					request,
+										HttpServletResponse 				response,
+										@RequestParam Map<String, Object> 	map) throws Exception {
+		Map<String, Object>		vrMp4 = null;
+		
+		vrMp4 = adminService.select_vrMp4(map);
+		
+		String deletePath = (String) vrMp4.get("img_Path");
+		String img_Name = (String) vrMp4.get("img_Name");
+		
+		deletePath = deletePath + "\\" +img_Name;
+		
+		System.out.println("**************"+deletePath);
+		
+		File file = new File(deletePath);
+		file.delete();
+		
+		adminService.delete_vrMp4(map);
+		
+		ModelAndView mav = new ModelAndView("redirect:/admin/vr.do");
 		return mav;
 	}
     

@@ -137,6 +137,12 @@
 	           }
 	 		});
 	}
+  
+  	function deleteVR(vrMp4_no) {
+		if(confirm("민우야 진자로 삭제할꺼니?")){
+			location.href="<%=cp%>/admin/vrMp4_delete.do?vrMp4_no="+vrMp4_no;
+		}
+	}
 	</script>
 	
 </head>
@@ -166,7 +172,7 @@
     <div class="row">
     	<c:forEach var="data" items="${potolio_list}">
         <div class="col-md-6 img-portfolio">
-        	<video controls="controls" style="max-width: 100%;">
+        	<video controls="controls" style="max-width: 100%;" onclick="deleteVR(${data.vrMp4_no});">
 		    	<source class="img-responsive img-hover" src="/upload/mp4/vr/${data.img_Name}" type="video/mp4" />
 			</video>
             <h3>

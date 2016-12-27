@@ -27,11 +27,36 @@
 			)
 	</insert>
 	
+	<select id="select_imgName" parameterType="map" resultType="map">
+		SELECT
+			*
+		FROM
+			cgPortpolio
+		WHERE
+			cgPortpolio_no = #{cgPortpolio_no}
+	</select>
+	
 	<delete id="delete_img_cg" parameterType="map">
 		DELETE FROM
 			cgPortpolio
 		WHERE
 			cgPortpolio_no = #{cgPortpolio_no}
+	</delete>
+	
+	<select id="select_vrMp4" parameterType="map" resultType="map">
+		SELECT
+			*
+		FROM
+			vrMP4
+		WHERE
+			vrMp4_no = #{vrMp4_no}
+	</select>
+	
+	<delete id="delete_vrMp4" parameterType="map">
+		DELETE FROM
+			vrMP4
+		WHERE
+			vrMp4_no = #{vrMp4_no}
 	</delete>
 	
 	<insert id="save_img_construction" parameterType="map">
