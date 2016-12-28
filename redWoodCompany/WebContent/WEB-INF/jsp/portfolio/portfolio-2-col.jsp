@@ -20,14 +20,9 @@
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Two Column Portfolio
-                    <small>Subheading</small>
+                <h1 class="page-header">VR Simulation
+                    <small>영상 제작 자료</small>
                 </h1>
-                <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a>
-                    </li>
-                    <li class="active">Two Column Portfolio</li>
-                </ol>
             </div>
         </div>
         <!-- /.row -->
@@ -38,11 +33,7 @@
 	        <div class="col-md-6 img-portfolio">
 	        	<video controls="controls" style="max-width: 100%;">
 			    	<source class="img-responsive img-hover" src="/upload/mp4/vr/${data.img_Name}" type="video/mp4" />
-				</video>
-	            <h3>
-	                <a href="portfolio-item.html">Project One</a>
-	            </h3>
-	            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+				</video>	            
 	        </div>
 	        </c:forEach>
 	    </div>

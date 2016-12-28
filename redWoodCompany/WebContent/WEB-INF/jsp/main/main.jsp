@@ -78,34 +78,28 @@
                     We Work
                 </h1>
             </div>
-            <div class="col-md-4">
-<!--                 <div class="panel panel-default"> -->
-<!--                     <div class="panel-heading"> -->
-<!--                         <h4><i class="fa fa-fw fa-check"></i> Bootstrap v3.3.7</h4> -->
-<!--                     </div> -->
-<!--                     <div class="panel-body"> -->
-<!--                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p> -->
-<!--                         <a href="#" class="btn btn-default">Learn More</a> -->
-<!--                     </div> -->
-<!--                 </div> -->
-            </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-6">
                 <div class="">
                     <div class="" align="center">
-                        <img src="<%=cp%>/img/work.jpg" width="350px;" alt="">
+                        <img class="img-responsive img-portfolio img-hover" src="<%=cp%>/img/work.jpg" width="350px;" alt="">
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-<!--                 <div class="panel panel-default"> -->
-<!--                     <div class="panel-heading"> -->
-<!--                         <h4><i class="fa fa-fw fa-compass"></i> Easy to Use</h4> -->
-<!--                     </div> -->
-<!--                     <div class="panel-body"> -->
-<!--                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p> -->
-<!--                         <a href="#" class="btn btn-default">Learn More</a> -->
-<!--                     </div> -->
-<!--                 </div> -->
+            <div class="col-md-4 col-sm-6">
+                <div class="">
+                    <div class="" align="center">
+                        <img class="img-responsive img-portfolio img-hover" src="<%=cp%>/img/main_01.jpg" width="350px;" alt="">
+                    </div>
+                    <p align="center"><strong>사전 CG작업</strong></p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="">
+                    <div class="" align="center">
+                        <img class="img-responsive img-portfolio img-hover" src="<%=cp%>/img/main_02.jpg" width="350px;" alt="">
+                    </div>
+                    <p align="center"><strong>실제 시공사진</strong></p>
+                </div>
             </div>
         </div>
         <!-- /.row -->
@@ -136,7 +130,7 @@
                     <br>
                     <br>
                 </ul>
-                <p>건축3D 시뮬레이션은 설계의 문제유무판단과 사업성 검토 , 적합한 외장재선택에  도움이되고  건축물의 완성도를 높입니다. 여러분의 상상속의 이미지를 영상으로 제작합니다. <br> 참고이미지 , 도면 , 조감도만으론 이미지 구현에 한계가 있습니다.</p>
+                <p>건축 3D 시뮬레이션은 설계의 문제유무판단과 사업성 검토, 적합한 외장재 선택에 도움이 되고 건축물의 완성도를 높입니다. 기존의 참고이미지, 도면, 조감도만으론 이미지 구현에 한계가 있습니다. 여러분의 상상 속 이미지를 영상으로 제작하여 건축 설계의 질을 높일 수 있습니다.</p>
             </div>
             <div class="col-md-6">
                 <video poster="http://placehold.it/640x360" controls="controls" autoplay="autoplay" style="max-width: 100%;">

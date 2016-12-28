@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Modern Business</title>
+    <title>Rodwood Studio</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<%=cp%>/css/bootstrap.min.css" rel="stylesheet">
